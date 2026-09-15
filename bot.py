@@ -1,3 +1,8 @@
+import asyncio
+asyncio.set_event_loop(asyncio.new_event_loop())
+
+import os
+import tempfile
 import os
 import tempfile
 from datetime import datetime, timedelta, timezone
