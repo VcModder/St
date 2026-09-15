@@ -1,0 +1,2 @@
+python-telegram-bot>=22.8
+huggingface_hub>=0.34.0
