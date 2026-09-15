@@ -3,10 +3,11 @@ from huggingface_hub import InferenceClient
 
 MODEL = "Falconsai/nsfw_image_detection"
 
-HF_TOKEN = os.getenv("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")
+# Yahan apna Hugging Face token paste karo
+HF_TOKEN = "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"
 
 if not HF_TOKEN:
-    raise RuntimeError("HF_TOKEN environment variable is missing.")
+    raise RuntimeError("HF_TOKEN is missing.")
 
 client = InferenceClient(
     provider="hf-inference",
@@ -15,11 +16,6 @@ client = InferenceClient(
 
 
 def is_nsfw(image_path: str, threshold: float = 0.80) -> bool:
-    """
-    Returns True if the image is classified as NSFW
-    with confidence >= threshold.
-    """
-
     try:
         result = client.image_classification(
             image_path,
